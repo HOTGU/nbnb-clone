@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block page_title %}
+    {{user_obj.first_name}}'s Reservations
+{% endblock page_title %}
+
+
+{% block content %}
+    
+    <div class="min-h-75vh">
+        <div class="h-full container max-w-screen-xl mx-auto flex flex-col items-center">
+            <h3 class="mb-12 text-2xl">Reservations</h3>
+            <div class="flex flex-wrap w-full">
+            {% if request.session.is_hosting %}
+                {% for reservation in reservations %}
+                    {% for r in reservation %}
+                        {% if r.room.host == user %}
+                            {% include 'mixins/reservation_card.html' with reservation=r %}
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
+                
+            {% else %}
+                {% for r in user.reservations.all %}
+                    {% include 'mixins/reservation_card.html' with reservation=r %}
+                {% endfor %}
+            {% endif %}
+            </div>
+        </div>
+   </div>
+        
+
+{% endblock content %}

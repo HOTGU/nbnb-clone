@@ -29,3 +29,29 @@ class SearchForm(forms.Form):
     )
 
 
+class CreateRoomForm(forms.ModelForm):
+    class Meta:
+        model = models.Room
+        fields = (
+            "name",
+            "description",
+            "country",
+            "city",
+            "price",
+            "address",
+            "guests",
+            "beds",
+            "bedrooms",
+            "baths",
+            "check_in",
+            "check_out",
+            "instant_book",
+            "room_type",
+            "amenities",
+            "facilities",
+            "house_rules",
+        )
+
+    def save(self, *args, **kwargs):
+        room = super().save(commit=False)
+        return room
