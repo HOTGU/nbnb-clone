@@ -128,3 +128,7 @@ dmypy.json
 .DS_Store
 node_modules
 uploads
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
