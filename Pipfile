@@ -6,14 +6,14 @@ name = "pypi"
 [packages]
 pathspec = "*"
 django = "*"
+django-dotenv = "*"
+django-countries = "*"
+django-seed = "*"
+requests = "*"
+pillow = "*"
 
 [dev-packages]
 awsebcli = "*"
-black = "*"
-flake8 = "*"
 
 [requires]
-python_version = "3.8"
-
-[pipenv]
-allow_prereleases = true
+python_version = "3.7"

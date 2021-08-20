@@ -142,6 +142,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "uploads/")
 MEDIA_URL = "/media/"
 
 # Email
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 EMAIL_BACKEND = "django_ses.SESBackend"
 
