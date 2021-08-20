@@ -5,12 +5,12 @@ name = "pypi"
 
 [packages]
 pathspec = "*"
-django = "*"
 django-dotenv = "*"
 django-countries = "*"
 django-seed = "*"
 requests = "*"
 pillow = "*"
+django = "==2.2.5"
 
 [dev-packages]
 awsebcli = "*"
